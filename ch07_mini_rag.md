@@ -52,7 +52,6 @@ prompt = "Answer only using this runbook section: <section> \n Question: <questi
 Converse (Nova Micro) → answer grounded in the runbook, or "not covered"
 ```
 
-> 🖼️ [FIGURE ch07-fig02-pipeline.png | full width | "The mini-RAG pipeline: one AWS call, not five" — the four local, no-cost steps in orange leading into the single Bedrock call in blue]
 
 **When to graduate to a real vector database.** This hand-rolled scoring works well for a handful of documents with clearly distinct vocabulary, like one team's runbook. It gets worse as the document count grows into the hundreds, or when questions use completely different words than the document (a true vector/embedding search handles that better, because it matches on meaning, not shared words). Chapter 8's capstone is a good point to decide whether a real knowledge base is worth it for a specific project — this chapter is the lab that makes that trade-off a choice you understand rather than a default you reached for.
 
@@ -106,7 +105,6 @@ grep -c "^## " ~/ch07/runbook.md
 
 **Expected output:** `5` — one line per section header.
 
-> **GitHub repo:** commit `runbook.md` to `chapter-07/`, created exactly as above.
 
 ### Step 2: Install boto3 (if needed)
 
@@ -332,8 +330,6 @@ This isn't covered in the runbook section I found — escalate or check another 
 ```
 
 If the score comes back above `MIN_SCORE` (0.05) because of incidental word overlap (both mention "certificate" or "key"), the model itself should still decline to answer from an unrelated section, because the system prompt tells it to. This is why the chapter has two safety nets — the score threshold and the prompt instruction — rather than relying on either alone.
-
-> **GitHub repo:** commit `retrieve.py` and `mini_rag.py` to `chapter-07/`, alongside `runbook.md`.
 
 ## Troubleshooting
 
