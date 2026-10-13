@@ -4,10 +4,6 @@
 
 **Cost:** ₹0 (the card verification charge is refunded) · **Time:** 45–60 minutes · **Cleanup:** none — everything in this chapter is kept for the rest of the book.
 
-> 🎥 **Video walkthrough:** the full chapter, step by step.
-> `🎥 [VIDEO ch00 | QR code + short link | 8–12 min | public YouTube]`
-> Everything is also written out below, so the video is optional.
-
 **The purpose of this chapter, in one sentence:** get your AWS account into a safe, ready state — locked down, cost-alerted, and in the right region — so every lab after this one is about AI, not about fixing account problems.
 
 **Why anyone should spend 45–60 minutes on this before touching AI at all:** almost every "it didn't work" moment in the rest of this book traces back to one of three things — the wrong region, no cost alert so a mistake goes unnoticed, or an identity (root) that should never be used day to day. This chapter removes all three in one sitting, once, so you never have to think about them again.
